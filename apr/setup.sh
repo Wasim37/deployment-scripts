@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright 2016 Chen Peng <senpal220@qq.com> All rights reserved.
+# Copyright 2016 wasim <wasim37@163.com> All rights reserved.
 # 
 # 安装类型：支持物理机、Docker、和阿里云；
 # 安装介质：支持本地安装和下载安装；
