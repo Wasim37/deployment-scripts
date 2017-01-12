@@ -1,0 +1,41 @@
+#!/bin/sh
+
+start()  
+{  
+        /usr/local/mysql-proxy/bin/mysql-proxyd test start
+}  
+stop()  
+{  
+        /usr/local/mysql-proxy/bin/mysql-proxyd test stop
+}
+status()  
+{       
+        /usr/local/mysql-proxy/bin/mysql-proxyd test status  
+}
+restart()  
+{  
+        /usr/local/mysql-proxy/bin/mysql-proxyd test restart
+} 
+ATLAS="/usr/local/mysql-proxy/bin/mysql-proxyd"  
+[ -f $ATLAS ] || exit 1  
+# See how we were called.  
+case "$1" in  
+        start)  
+                start  
+                ;;  
+        stop)  
+                stop  
+                ;;  
+        restart)  
+                restart
+                ;;  
+        status)  
+                status 
+                ;;  
+                # stop    sleep 3   start  ;;  
+        *)  
+                echo $"Usage: $0 {start|stop|status|restart}"  
+                exit 1  
+esac  
+exit 0 
+

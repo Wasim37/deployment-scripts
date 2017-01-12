@@ -80,7 +80,9 @@ copy_file() {
     tar_file=`cd $build_dir; ls *.gz`
     mkdir -p $setup_dir
     tar -zxvf $build_dir/$tar_file --strip-components 1 -C $setup_dir
-    cp $build_dir/tomcat /etc/init.d/`basename $instance_dir`
+    
+
+
   fi
 }
 
