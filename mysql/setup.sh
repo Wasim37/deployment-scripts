@@ -34,9 +34,9 @@ done
 
 # 安装参数
 setup_dir='/usr/local/mysql'
-instance_dir='/var/mysql'
+instance_dir='/data/mysql'
 port='3306'
-password='000000'
+password='wx123'
 
 parse_args() {
   read -p "请输入实例目录 [$instance_dir]：" _instance_dir
@@ -155,7 +155,7 @@ config_iptables() {
 }
 
 add_service() {
-    echo '添加启动服务...'
+  echo '添加启动服务...'
 
   # 配置启动脚本
   cp $setup_dir/support-files/mysql.server /etc/init.d/`basename $instance_dir`
@@ -169,7 +169,7 @@ add_service() {
   chkconfig --add `basename $instance_dir`
   service `basename $instance_dir` restart
 
-  # 开机自启服务
+  echo '设置开机自启服务...'
   if [ $setup_type != 'docker' ] ; then
     chkconfig `basename $instance_dir` on
   fi
@@ -182,8 +182,9 @@ download_file
 copy_file
 setup
 set_env
-config_iptables
+# config_iptables
 add_service
+
 
 echo 'MySQL安装完成！'
 
