@@ -35,8 +35,8 @@ done
 # 安装参数
 setup_dir='/usr/local/mysql'
 instance_dir='/data/mysql'
-port='3306'
-password='wx123'
+port='3370'
+password='wx123aL'
 
 parse_args() {
   read -p "请输入实例目录 [$instance_dir]：" _instance_dir
